@@ -5,7 +5,6 @@ package com.example.demo.services;
 
 import java.util.List;
 
-import com.example.demo.dto.VentaID;
 import com.example.demo.dto.Ventas;
 
 /**
@@ -15,11 +14,11 @@ import com.example.demo.dto.Ventas;
 public interface IVentasServices {
 	public List<Ventas> obtenerVentas();
 	
-	public Ventas obtenerVentasID(VentaID id);
+	public Ventas obtenerVentasID(Long id);
 	
 	public Ventas guardarVentas(Ventas ventas);
 	
 	public Ventas modificarVentas(Ventas ventas);
 	
-	public void eliminarVentas(VentaID id);
+	public void eliminarVentas(Long id);
 }

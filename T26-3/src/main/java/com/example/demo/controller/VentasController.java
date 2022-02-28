@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.example.demo.dto.VentaID;
 import com.example.demo.dto.Ventas;
 import com.example.demo.services.VentasServiceImpl;
 
@@ -37,7 +35,7 @@ public class VentasController {
 	}
 	
 	@GetMapping("/ventas/{id}")
-	public Ventas obtenerVentasID(@PathVariable(name="id") VentaID id) {
+	public Ventas obtenerVentasID(@PathVariable(name="id") Long id) {
 		return ventasServiceImpl.obtenerVentasID(id);
 	}
 	
@@ -47,7 +45,7 @@ public class VentasController {
 	}
 	
 	@PutMapping("/ventas/{id}")
-	public Ventas modificarVentas(@RequestBody Ventas venta, @PathVariable(name="id") VentaID id) {
+	public Ventas modificarVentas(@RequestBody Ventas venta, @PathVariable(name="id") Long id) {
 		Ventas ventaSeleccionado = new Ventas();
 		Ventas ventaModificado = new Ventas();
 		ventaSeleccionado = ventasServiceImpl.obtenerVentasID(id);
@@ -58,7 +56,7 @@ public class VentasController {
 	}
 	
 	@DeleteMapping("/ventas/{id}")
-	public void eliminarVentas(@PathVariable(name="id") VentaID id) {
+	public void eliminarVentas(@PathVariable(name="id") Long id) {
 		ventasServiceImpl.eliminarVentas(id);
 	}
 

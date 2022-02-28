@@ -19,25 +19,24 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="venta")
-@IdClass(VentaID.class)
 public class Ventas {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
 	@ManyToOne
 	@JoinColumn(name="cajero")
-	private Long cajero;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Cajeros cajero;
+	
 	@ManyToOne
 	@JoinColumn(name="maquina")
-	private Long maquina;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private MaquinasRegistradoras maquina;
+	
 	@ManyToOne
 	@JoinColumn(name="producto")
-	private Long producto;
+	private Productos producto;
 	
-	public Ventas(Long cajero, Long maquina, Long producto) {
+	public Ventas(Cajeros cajero, MaquinasRegistradoras maquina, Productos producto) {
 		super();
 		this.cajero = cajero;
 		this.maquina = maquina;
@@ -47,28 +46,28 @@ public class Ventas {
 	public Ventas() {
 		super();
 	}
-
-	public Long getCajero() {
+	
+	public Cajeros getCajero() {
 		return cajero;
 	}
 
-	public void setCajero(Long cajero) {
+	public void setCajero(Cajeros cajero) {
 		this.cajero = cajero;
 	}
 
-	public Long getMaquina() {
+	public MaquinasRegistradoras getMaquina() {
 		return maquina;
 	}
 
-	public void setMaquina(Long maquina) {
+	public void setMaquina(MaquinasRegistradoras maquina) {
 		this.maquina = maquina;
 	}
 
-	public Long getProducto() {
+	public Productos getProducto() {
 		return producto;
 	}
 
-	public void setProducto(Long producto) {
+	public void setProducto(Productos producto) {
 		this.producto = producto;
 	}
 

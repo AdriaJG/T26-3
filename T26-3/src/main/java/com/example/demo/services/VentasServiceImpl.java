@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.IVentasDAO;
-import com.example.demo.dto.VentaID;
 import com.example.demo.dto.Ventas;
 
 /**
@@ -28,7 +27,7 @@ public class VentasServiceImpl implements IVentasServices {
 	}
 
 	@Override
-	public Ventas obtenerVentasID(VentaID id) {
+	public Ventas obtenerVentasID(Long id) {
 		// TODO Auto-generated method stub
 		return iVentasDAO.findById(id).get();
 	}
@@ -46,7 +45,7 @@ public class VentasServiceImpl implements IVentasServices {
 	}
 
 	@Override
-	public void eliminarVentas(VentaID id) {
+	public void eliminarVentas(Long id) {
 		// TODO Auto-generated method stub
 		iVentasDAO.deleteById(id);
 	}
