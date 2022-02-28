@@ -25,19 +25,19 @@ public class Ventas {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ManyToOne
 	@JoinColumn(name="cajero")
-	private Long cajero;
+	private Cajeros cajero;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ManyToOne
 	@JoinColumn(name="maquina")
-	private Long maquina;
+	private MaquinasRegistradoras maquina;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ManyToOne
 	@JoinColumn(name="producto")
-	private Long producto;
+	private Productos producto;
 	
-	public Ventas(Long cajero, Long maquina, Long producto) {
+	public Ventas(Cajeros cajero, MaquinasRegistradoras maquina, Productos producto) {
 		super();
 		this.cajero = cajero;
 		this.maquina = maquina;
@@ -48,27 +48,27 @@ public class Ventas {
 		super();
 	}
 
-	public Long getCajero() {
+	public Cajeros getCajero() {
 		return cajero;
 	}
 
-	public void setCajero(Long cajero) {
+	public void setCajero(Cajeros cajero) {
 		this.cajero = cajero;
 	}
 
-	public Long getMaquina() {
+	public MaquinasRegistradoras getMaquina() {
 		return maquina;
 	}
 
-	public void setMaquina(Long maquina) {
+	public void setMaquina(MaquinasRegistradoras maquina) {
 		this.maquina = maquina;
 	}
 
-	public Long getProducto() {
+	public Productos getProducto() {
 		return producto;
 	}
 
-	public void setProducto(Long producto) {
+	public void setProducto(Productos producto) {
 		this.producto = producto;
 	}
 
@@ -76,8 +76,4 @@ public class Ventas {
 	public String toString() {
 		return "Ventas [cajero=" + cajero + ", maquina=" + maquina + ", producto=" + producto + "]";
 	}
-	
-	
-	
-
 }
