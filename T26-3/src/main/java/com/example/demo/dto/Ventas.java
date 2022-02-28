@@ -25,17 +25,17 @@ public class Ventas {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ManyToOne
 	@JoinColumn(name="cajero")
-	Long cajero;
+	private Long cajero;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ManyToOne
 	@JoinColumn(name="maquina")
-	Long maquina;
+	private Long maquina;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ManyToOne
 	@JoinColumn(name="producto")
-	Long producto;
+	private Long producto;
 	
 	public Ventas(Long cajero, Long maquina, Long producto) {
 		super();

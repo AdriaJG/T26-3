@@ -19,11 +19,11 @@ import javax.persistence.Table;
 public class Productos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long codigo;
+	private Long codigo;
 	@Column(name="nombre")
-	String nombre;
+	private String nombre;
 	@Column(name="precio")
-	int precio;
+	private int precio;
 	
 	public Productos(Long codigo, String nombre, int precio) {
 		super();

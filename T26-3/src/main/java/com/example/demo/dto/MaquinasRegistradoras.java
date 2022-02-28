@@ -19,9 +19,9 @@ import javax.persistence.Table;
 public class MaquinasRegistradoras {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long codigo;
+	private Long codigo;
 	@Column(name="piso")
-	int piso;
+	private int piso;
 	
 	public MaquinasRegistradoras(Long codigo, int piso) {
 		super();

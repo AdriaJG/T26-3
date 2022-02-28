@@ -19,9 +19,9 @@ import javax.persistence.Table;
 public class Cajeros {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long codigo;
+	private Long codigo;
 	@Column(name="nomapels")
-	String nomApels;
+	private String nomApels;
 	
 	public Cajeros(Long codigo, String nomApels) {
 		super();
